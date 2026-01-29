@@ -24,10 +24,28 @@ mcpdump 连接到任意 MCP 服务器，导出其完整规格信息，包括：
 ## 安装
 
 ```bash
-git clone https://github.com/user/mcpdump.git
+git clone https://github.com/1WorldCapture/mcpdump.git
 cd mcpdump
 npm install
 ```
+
+### 全局安装（可选）
+
+如需在任意目录下使用 `mcpdump` 命令：
+
+```bash
+npm link
+```
+
+之后可直接运行：
+
+```bash
+mcpdump stdio -- node ./server.js
+mcpdump http --url http://localhost:3000/mcp
+mcpdump --help
+```
+
+卸载：`npm unlink -g mcpdump`
 
 ## 使用方法
 
@@ -81,6 +99,7 @@ npx tsx dump-mcp.ts sse --url http://localhost:3000/sse \
 | `--cwd` | stdio 子进程的工作目录 |
 | `--inherit-env` | 将当前所有环境变量传递给 stdio 子进程 |
 | `--env` | 额外的环境变量覆盖，可重复使用（如 `--env API_KEY=xxx`） |
+| `--help, -h` | 显示帮助信息 |
 
 ## 输出格式
 

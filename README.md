@@ -24,10 +24,28 @@ mcpdump connects to any MCP server and exports its complete specification includ
 ## Installation
 
 ```bash
-git clone https://github.com/user/mcpdump.git
+git clone https://github.com/1WorldCapture/mcpdump.git
 cd mcpdump
 npm install
 ```
+
+### Global Installation (optional)
+
+To use `mcpdump` command from anywhere:
+
+```bash
+npm link
+```
+
+Then you can run:
+
+```bash
+mcpdump stdio -- node ./server.js
+mcpdump http --url http://localhost:3000/mcp
+mcpdump --help
+```
+
+To uninstall: `npm unlink -g mcpdump`
 
 ## Usage
 
@@ -81,6 +99,7 @@ npx tsx dump-mcp.ts sse --url http://localhost:3000/sse \
 | `--cwd` | Working directory for stdio spawned process |
 | `--inherit-env` | Pass all current process.env to the stdio server |
 | `--env` | Extra env override for stdio, repeatable (e.g., `--env API_KEY=xxx`) |
+| `--help, -h` | Show help message |
 
 ## Output Format
 
