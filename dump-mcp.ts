@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/env tsx
 /**
  * Dump an MCP server's advertised specs (tools/resources/prompts) to a JSON file.
  *
@@ -64,7 +64,7 @@ Usage:
   dump-mcp.ts sse --url URL [--out FILE] [--header "K: V" ...]
 
 Options:
-  --out, -o           Output JSON file (default: mcp-spec.json)
+  --out, -o           Output JSON file (default: dump.json)
   --url               MCP endpoint URL (for http/sse)
   --header, -H        HTTP header, repeatable. e.g. -H "Authorization: Bearer XXX"
   --session-id        Streamable HTTP session ID (optional)
@@ -130,7 +130,7 @@ function parseCli(argv: string[]): ParsedArgs {
     transport = args.shift() as TransportKind;
   }
 
-  let outFile = "mcp-spec.json";
+  let outFile = "dump.json";
   let url: string | undefined;
   let sessionId: string | undefined;
   const headers: HeadersMap = {};
